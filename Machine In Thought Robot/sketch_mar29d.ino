@@ -1,6 +1,7 @@
-//Carson Gedeus - March 29, 2016
-//Second servo motor running wirelessly via XCTU
-//Conveyor Belt
+// Carson Gedeus - March 29, 2016
+// Second servo motor running wirelessly via XCTU
+// Conveyor Belt
+
 #include <Servo.h>
 
 Servo MyServo[12];
@@ -34,7 +35,6 @@ void loop() {
         //delay(15);
         }
 
-
      if(button == 0x64)
        for(pos = 180; pos >= 0; pos -=1)    //FORWARD
        {
@@ -42,16 +42,15 @@ void loop() {
        //delay(15);
        }
 
-
      if(button == 0x73) //Press "s" to stop servo motor COMPLETELY
       MyServo[theServo].detach();
-
 
       for(theServo=0; theServo<11; theServo++)
       {
         MyServo[theServo].write(pos);
         delay(15);
       }
+      
       Serial.write(button);
   }
 }

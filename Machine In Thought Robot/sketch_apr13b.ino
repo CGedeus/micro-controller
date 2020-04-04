@@ -1,4 +1,7 @@
-/*Robots via Arduino*/
+// Carson Gedeus
+// sketch_apr13b.ino
+// Robots source-code for Arduino
+
 #include <Servo.h>
 
 #define leftMotorPin 11
@@ -15,19 +18,18 @@ int pos = 0;
 
 void setup() {
 
-pinMode(leftMotorPin, OUTPUT);
-pinMode(rightMotorPin, OUTPUT);
-
- 
+  pinMode(leftMotorPin, OUTPUT);
+  pinMode(rightMotorPin, OUTPUT);
+  
   Serial.begin(9600);
-/*  
-  for(int ServoNum=0; ServoNum<4; ServoNum++)
-  {
-    earlyServos[ServoNum].attach(SERVO_TO_PIN(ServoNum));
-  }
-  */
-  //firstServo.attach(9);
-//  secondServo.attach(10);
+  /*  
+    for(int ServoNum=0; ServoNum<4; ServoNum++)
+    {
+      earlyServos[ServoNum].attach(SERVO_TO_PIN(ServoNum));
+    }
+    */
+  //  firstServo.attach(9);
+  //  secondServo.attach(10);
 }
 
 void loop() {
@@ -50,9 +52,6 @@ void loop() {
         secondServo.write(pos);
       }*/
     }
-
-
-
   
     if(push == 0x73)  //s - move backwards
     {
@@ -69,9 +68,6 @@ void loop() {
       }*/
     }
   
-  
-  
-  
     if(push == 0x61)   //a - Go left
     {
       analogWrite(leftMotorPin, 100);
@@ -85,9 +81,6 @@ void loop() {
       */
     }
 
-
-    
-  
     if(push == 0x64)   //d - Go right
     {
       analogWrite(leftMotorPin, 250);
@@ -100,9 +93,6 @@ void loop() {
       }
     */
     }
-
-
-
 /*
     case(0x6A):   //J
     {
@@ -115,10 +105,6 @@ void loop() {
     }
     break;
 */
-
-
- 
-  
     if(push == 0x70)   //p - stop forever
     {
       analogWrite(leftMotorPin, 255);
@@ -127,7 +113,6 @@ void loop() {
     }
 
     Serial.write(push);
-
       /*
       for(int ServoNum=0; ServoNum<=4; ServoNum++)
       {
@@ -136,4 +121,3 @@ void loop() {
       */
   }
 }
-

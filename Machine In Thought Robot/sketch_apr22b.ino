@@ -1,4 +1,7 @@
-/*Robots via Arduino*/
+// Carson Gedeus
+// sketch_apr22b.ino
+// Robots source-code for Arduino
+
 #include <Esplora.h>
 #include <Servo.h>
 
@@ -12,7 +15,7 @@ int pos = 0;
 int ServoNum;
 
 void setup() {
-  Serial.begin(9600);
+Serial.begin(9600);
 /* for(ServoNum=0; ServoNum<4; ServoNum++)
   {
     earlyServos[ServoNum].attach(SERVO_TO_PIN(ServoNum));
@@ -41,7 +44,6 @@ void loop() {
       }
     }
   
-  
     else if(push == 0x73)  //s - move backwards
     {
       for(pos=180; pos>=0; pos-=1)
@@ -54,10 +56,6 @@ void loop() {
       }
     }
   
-  
-  
-  
-  
     else if(push == 0x61)   //a - Go left
     {
       for(pos=0; pos<=180; pos+=1)
@@ -66,8 +64,7 @@ void loop() {
         secondServo.write(pos);
       }
     }
-    
-  
+
     else if(push == 0x64)   //d - Go right
     {
       for(pos=180; pos>=0; pos-=1)
@@ -76,9 +73,6 @@ void loop() {
         secondServo.write(pos);
       }
     }
-
-
-
 /*
     else if(push == 0x6A)   //J
     {
@@ -90,17 +84,12 @@ void loop() {
       earlyServos[5].write(-90);
     }
 */
-
-
-
     else if(push == 0x70)   //p - stop forever
     {
       firstServo.detach();
       secondServo.detach();
       earlyServos[ServoNum].detach();
     }
-
-
 /*  for(ServoNum=0; ServoNum<=4; ServoNum++)
     {
       earlyServos[ServoNum].write(conv);
@@ -109,7 +98,3 @@ void loop() {
     Serial.println("now");
   }
 }
-
-
-
-

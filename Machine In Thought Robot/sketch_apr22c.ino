@@ -1,12 +1,7 @@
-void setup() {
-  // put your setup code here, to run once:
+// Carson Gedeus
+// sketch_apr22c.ino
+// Robots source-code for Arduino
 
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
-}/*Robots via Arduino*/
 #include <Servo.h>
 
 Servo firstServo;
